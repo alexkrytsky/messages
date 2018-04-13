@@ -6,6 +6,17 @@
  * Time: 8:24 PM
  */
 
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        require '../database/db.php';
+
+        $message = $_POST['message'];
+
+        insertMessage($message);
+
+        //redirect
+        header('location', viewMessages.php);
+    }
+
 ?>
 <!DOCTYPE html>
 <html>

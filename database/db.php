@@ -46,13 +46,13 @@
          mysqli_free_result($results);
 
          return $records;
-
-
      }
 
      function insertMessage($message){
+         $connection = getConnection();
 
+         $query = "INSERT INTO messages (body) VALUES ('$message')";
+
+         return $connection->query($query);
      }
-
-
 ?>
